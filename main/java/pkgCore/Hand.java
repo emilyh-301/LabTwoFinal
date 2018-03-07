@@ -72,7 +72,7 @@ public class Hand {
 				}
 			}
 		}
-		
+		iScore[2] = score;
 		return iScore;
 	}
 	
