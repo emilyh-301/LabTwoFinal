@@ -1,6 +1,7 @@
 package pkgCore;
-
+import pkgEnum.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck{
 
@@ -18,72 +19,73 @@ public class Deck{
 	
 	//	TODO: Add a draw() method that will take a card from the deck and
 	//			return it to the caller
-	ArrayList<E> cards = new ArrayList();
+	ArrayList<Card> cards = new ArrayList();
 	
 	public Deck(int x) {
 		for(int i =0; i < x ; i++) {
+			eSuit es = null;
 			for(int s = 1; s <= 4; s++) {
-				eSUIT es;
+				
 				switch (s)
 				{
 				case 1:
-					es = CLUBS;
+					es = eSuit.CLUBS;
 					break;
 				case 2:
-					es = DIAMONDS;
+					es = eSuit.DIAMONDS;
 					break;
 				case 3:
-					es = HEARTS;
+					es = eSuit.HEARTS;
 					break;
 				case 4:
-					es = SPADES;
+					es = eSuit.SPADES;
 				}
 				
-				
-				for(int r = 1; r <= 14; r++) {
+				// Starts at 2 so we don't have jokers for blackjack
+				for(int r = 2; r <= 14; r++) {
 					switch (r)
 					{
 					case 1:
-						cards.add(new Card(JOKER, es))
+						cards.add(new Card(eRank.JOKER, es));
 						break;
 					case 2:
-						cards.add(new Card(TWO, es))
+						cards.add(new Card(eRank.TWO, es));
 						break;
 					case 3:
-						cards.add(new Card(THREE, es))
+						cards.add(new Card(eRank.THREE, es));
 						break;
 					case 4:
-						cards.add(new Card(FOUR, es))
+						cards.add(new Card(eRank.FOUR, es));
 						break;
 					case 5:
-						cards.add(new Card(FIVE, es))
+						cards.add(new Card(eRank.FIVE, es));
 						break;
 					case 6:
-						cards.add(new Card(SIX, es))
+						cards.add(new Card(eRank.SIX, es));
 						break;
 					case 7:
-						cards.add(new Card(SEVEN, es))
+						cards.add(new Card(eRank.SEVEN, es));
 						break;
 					case 8:
-						cards.add(new Card(EIGHT, es))
+						cards.add(new Card(eRank.EIGHT, es));
 						break;
 					case 9:
-						cards.add(new Card(NINE, es))
+						cards.add(new Card(eRank.NINE, es));
 						break;
 					case 10:
-						cards.add(new Card(TEN, es))
+						cards.add(new Card(eRank.TEN, es));
 						break;
 					case 11:
-						cards.add(new Card(JACK, es))
+						cards.add(new Card(eRank.JACK, es));
 						break;
 					case 12:
-						cards.add(new Card(QUEEN, es))
+						cards.add(new Card(eRank.QUEEN, es));
 						break;
 					case 13:
-						cards.add(new Card(KING, es))
+						cards.add(new Card(eRank.KING, es));
 						break;
 					case 14:
-						cards.add(new Card(ACE, es))
+						cards.add(new Card(eRank.ACE, es));
 						break;
 					}
 				}
