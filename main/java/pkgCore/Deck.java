@@ -89,10 +89,14 @@ public class Deck{
 				}
 			}
 		}
+		Collections.shuffle(DeckCards);
 	}
 	
-	public Card draw() {
-		int index = (int)(Math.random()*52)+1);
-		return cards.get(index);
+	public Card draw() throws Exception {
+		if(DeckCards.size()==0){
+			throw new Exception("Deck is empty");
+		}
+		return DeckCards.remove(0);
+		
 	}
 }
